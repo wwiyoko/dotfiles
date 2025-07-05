@@ -9,8 +9,6 @@ shopt -s histappend
 shopt -s checkwinsize
 stty -ixon
 
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-fi
+. /usr/share/bash-completion/bash_completion
 
 export GPG_TTY="$(tty)"
