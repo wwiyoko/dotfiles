@@ -54,39 +54,7 @@ auto("FileType", "*", function(ev)
     end
 end)
 
-local servers = {
-    gopls = {
-        cmd = { "gopls" },
-        file_types = { "go", "gomod", "gowork", "gotmpl" },
-        root_patterns = { "go.mod", "go.work" }
-    },
-    tsserver = {
-        cmd = { "typescript-language-server", "--stdio" },
-        file_types = { "javascript", "typescript" },
-        root_patterns = { "package.json", ".git" }
-    }
-}
-
-local function lsp_init(server_name, server_config)
-    if vim.fn.executable(server_config.cmd[1]) ~= 1 then
-        return
-    end
-
-    vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup(server_name, { clear = true }),
-        pattern = server_config.file_types,
-        callback = function(ev)
-            vim.lsp.start(vim.tbl_deep_extend("force", {
-                name = server_name,
-                root_dir = vim.fs.root(ev.buf, server_config.root_patterns)
-            }, server_config))
-        end
-    })
-end
-
-for server_name, server_config in pairs(servers) do
-    lsp_init(server_name, server_config)
-end
+vim.lsp.enable({ "gopls", "tsls" })
 
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if ok then
