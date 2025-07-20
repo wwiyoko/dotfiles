@@ -1,12 +1,12 @@
 [user]
-    name = Wahyu Wiyoko
-    email = wwiyoko@protonmail.com
+name = Wahyu Wiyoko
+email = wwiyoko@protonmail.com
 
 [core]
-    editor = nvim
+editor = nvim
 
 [init]
-    defaultBranch = main
+defaultBranch = main
 
 [commit]
-    verbose = true
+verbose = true
