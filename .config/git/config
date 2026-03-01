@@ -1,0 +1,12 @@
+[user]
+    name = Wahyu Wiyoko
+    email = wwiyoko@protonmail.com
+
+[core]
+    editor = nvim
+
+[init]
+    defaultBranch = main
+
+[commit]
+    verbose = true

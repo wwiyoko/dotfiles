@@ -1,0 +1,60 @@
+input type:keyboard {
+    repeat_rate 50
+    repeat_delay 300
+}
+
+input type:touchpad {
+    tap enabled
+    drag_lock disabled
+    pointer_accel 0.5
+}
+
+seat seat0 xcursor_theme Adwaita
+default_border pixel 2
+floating_modifier mod4
+
+exec pipewire
+exec brightnessctl set 10%
+
+bindsym mod4+return exec foot -f monospace:size=10
+bindsym mod4+d exec wmenu-run
+bindsym print exec grim -g "$(slurp)"
+bindsym mod4+shift+q kill
+
+bindsym mod4+h focus left
+bindsym mod4+j focus down
+bindsym mod4+k focus up
+bindsym mod4+l focus right
+
+bindsym mod4+shift+h move left
+bindsym mod4+shift+j move down
+bindsym mod4+shift+k move up
+bindsym mod4+shift+l move right
+
+bindsym mod4+equal resize grow width
+bindsym mod4+minus resize shrink width
+bindsym mod4+plus resize grow height
+bindsym mod4+underscore resize shrink height
+
+bindsym mod4+s split toggle
+bindsym mod4+w layout toggle tabbed split
+
+bindsym mod4+v focus mode_toggle
+bindsym mod4+shift+v floating toggle
+
+bindsym mod4+c scratchpad show
+bindsym mod4+shift+c move scratchpad
+
+bindsym mod4+1 workspace number 1
+bindsym mod4+2 workspace number 2
+bindsym mod4+3 workspace number 3
+bindsym mod4+4 workspace number 4
+bindsym mod4+5 workspace number 5
+
+bindsym mod4+shift+1 move container to workspace number 1
+bindsym mod4+shift+2 move container to workspace number 2
+bindsym mod4+shift+3 move container to workspace number 3
+bindsym mod4+shift+4 move container to workspace number 4
+bindsym mod4+shift+5 move container to workspace number 5
+
+for_window [app_id="swayimg|mpv"] floating enable
