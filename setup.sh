@@ -14,6 +14,12 @@ vulkan-loader
 mesa-vulkan-intel
 intel-video-accel
 dumb_runtime_dir
+libinput
+libxkbcommon
+wayland
+wlroots0.20
+xorg-server-xwayland
+base-devel
 opendoas
 seatd
 chrony
@@ -22,9 +28,9 @@ udisks2
 bash-completion
 dejavu-fonts-ttf
 gsettings-desktop-schemas
+xdg-desktop-portal
+xdg-desktop-portal-wlr
 gnome-themes-extra
-sway
-swayimg
 wl-clipboard
 xdg-user-dirs
 foot
@@ -35,6 +41,11 @@ neovim
 tmux
 grim
 slurp
+imv
+mpv
+mako
+libnotify
+playerctl
 EOF
 )
 
