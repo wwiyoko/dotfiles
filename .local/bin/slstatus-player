@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$(playerctl status 2>&1)" in
+    "Playing")
+        playerctl metadata -f "{{ lc(trunc(title, 20)) }} - {{ lc(trunc(artist, 20)) }}"
+        ;;
+    "Paused")
+        echo "paused"
+        ;;
+    *)
+        echo "not playing"
+        ;;
+esac
