@@ -46,6 +46,9 @@ mpv
 mako
 libnotify
 playerctl
+mpd
+mpdris2-rs
+ncmpcpp
 EOF
 )
 
